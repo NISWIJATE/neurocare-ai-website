@@ -1,4 +1,5 @@
 import { Activity, Brain, Heart, Zap, Lock, LineChart } from "lucide-react";
+import { Reveal } from "./Reveal";
 
 const features = [
   { icon: Activity, title: "Real-Time Vitals", text: "Heart rate, SpO₂, HRV and more — streamed continuously." },
@@ -11,28 +12,30 @@ const features = [
 
 export function Features() {
   return (
-    <section id="features" className="py-24 px-6">
+    <section id="features" className="section-pad">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto">
-          <span className="text-cyan text-sm font-medium uppercase tracking-widest">Features</span>
-          <h2 className="mt-3 text-4xl md:text-5xl font-bold">Everything you need for <span className="text-gradient">proactive care</span></h2>
-        </div>
-        <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <Reveal>
+          <div className="text-center max-w-2xl mx-auto">
+            <span className="text-cyan text-xs sm:text-sm font-medium uppercase tracking-widest">Features</span>
+            <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold">
+              Everything you need for <span className="text-gradient">proactive care</span>
+            </h2>
+          </div>
+        </Reveal>
+        <div className="mt-12 sm:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {features.map(({ icon: Icon, title, text }, i) => (
-            <div
-              key={title}
-              className="group relative rounded-2xl glass p-6 hover:-translate-y-1 hover:border-primary/50 transition-all duration-300 animate-fade-up"
-              style={{ animationDelay: `${i * 0.05}s` }}
-            >
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative">
-                <div className="grid place-items-center size-12 rounded-xl bg-gradient-to-br from-primary/30 to-accent/20 text-cyan mb-4 group-hover:scale-110 transition-transform">
-                  <Icon className="size-6" />
+            <Reveal key={title} delay={i * 70}>
+              <div className="group relative rounded-2xl glass p-6 hover:-translate-y-1 hover:border-primary/50 transition-all duration-300 h-full">
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative">
+                  <div className="grid place-items-center size-12 rounded-xl bg-gradient-to-br from-primary/30 to-accent/20 text-cyan mb-4 group-hover:scale-110 transition-transform">
+                    <Icon className="size-6" />
+                  </div>
+                  <h3 className="text-lg font-semibold">{title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{text}</p>
                 </div>
-                <h3 className="text-lg font-semibold">{title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{text}</p>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
