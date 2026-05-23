@@ -62,6 +62,27 @@
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
 }
+@keyframes blob {
+  0%, 100% { transform: translate(0,0) scale(1); }
+  33% { transform: translate(30px,-40px) scale(1.1); }
+  66% { transform: translate(-20px,30px) scale(0.95); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(180px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(180px) rotate(-360deg); }
+}
+
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .reveal { opacity: 1; transform: none; }
+}
 
 :root {
   --radius: 0.75rem;
@@ -106,10 +127,12 @@
 }
 
 @utility text-gradient {
-  background: linear-gradient(135deg, oklch(0.85 0.14 195), oklch(0.7 0.18 230));
+  background: linear-gradient(120deg, oklch(0.92 0.13 195), oklch(0.78 0.16 210), oklch(0.65 0.2 260));
+  background-size: 200% 200%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  animation: gradient 8s ease infinite;
 }
 
 @utility glass {
@@ -120,4 +143,14 @@
 
 @utility glow {
   box-shadow: 0 0 40px -8px oklch(0.78 0.18 195 / 0.5);
+}
+
+@utility section-pad {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+@media (min-width: 768px) {
+  .section-pad { padding-top: 6rem; padding-bottom: 6rem; padding-left: 1.5rem; padding-right: 1.5rem; }
 }
