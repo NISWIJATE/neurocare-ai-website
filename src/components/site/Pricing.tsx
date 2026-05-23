@@ -13,7 +13,7 @@ export function Pricing() {
       <div className="max-w-6xl mx-auto">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto">
-            <span className="text-cyan text-xs sm:text-sm font-medium uppercase tracking-widest">Pricing</span>
+            <span className="text-cyan text-xs sm:text-sm font-semibold uppercase tracking-widest">Pricing</span>
             <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold">
               Simple, <span className="text-gradient">transparent pricing</span>
             </h2>
@@ -23,15 +23,15 @@ export function Pricing() {
           {tiers.map((t, i) => (
             <Reveal key={t.name} delay={i * 100} className={t.featured ? "sm:col-span-2 lg:col-span-1" : ""}>
               <div
-                className={`relative rounded-2xl p-7 sm:p-8 transition-all duration-300 hover:-translate-y-1 h-full ${
+                className={`relative rounded-lg p-7 sm:p-8 transition-all duration-300 hover:-translate-y-1 h-full ${
                   t.featured
-                    ? "bg-gradient-to-b from-primary/20 to-card border border-primary/50 glow"
-                    : "glass"
+                    ? "bg-gradient-to-b from-secondary to-white border border-primary/30 glow"
+                    : "border border-border bg-white shadow-sm"
                 }`}
               >
                 {t.featured && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-1 text-xs font-medium bg-gradient-to-r from-primary to-accent text-primary-foreground">
-                    Most Popular
+                    Best value
                   </div>
                 )}
                 <h3 className="text-xl font-semibold">{t.name}</h3>
@@ -52,8 +52,8 @@ export function Pricing() {
                   href="#contact"
                   className={`mt-8 block text-center rounded-full py-3 font-medium transition-all ${
                     t.featured
-                      ? "bg-gradient-to-r from-primary to-accent text-primary-foreground hover:scale-105"
-                      : "border border-border hover:border-primary"
+                      ? "bg-primary text-primary-foreground hover:-translate-y-0.5 hover:bg-primary/90"
+                      : "border border-border bg-white hover:-translate-y-0.5 hover:border-primary"
                   }`}
                 >
                   Get Started

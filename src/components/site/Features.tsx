@@ -16,7 +16,7 @@ export function Features() {
       <div className="max-w-6xl mx-auto">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto">
-            <span className="text-cyan text-xs sm:text-sm font-medium uppercase tracking-widest">Features</span>
+            <span className="text-cyan text-xs sm:text-sm font-semibold uppercase tracking-widest">Features</span>
             <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold">
               Everything you need for <span className="text-gradient">proactive care</span>
             </h2>
@@ -25,10 +25,10 @@ export function Features() {
         <div className="mt-12 sm:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {features.map(({ icon: Icon, title, text }, i) => (
             <Reveal key={title} delay={i * 70}>
-              <div className="group relative rounded-2xl glass p-6 hover:-translate-y-1 hover:border-primary/50 transition-all duration-300 h-full">
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="group relative h-full overflow-hidden rounded-lg border border-border bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10">
+                <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-accent to-primary opacity-0 transition-opacity group-hover:opacity-100" />
                 <div className="relative">
-                  <div className="grid place-items-center size-12 rounded-xl bg-gradient-to-br from-primary/30 to-accent/20 text-cyan mb-4 group-hover:scale-110 transition-transform">
+                  <div className="grid place-items-center size-12 rounded-lg bg-secondary text-cyan mb-4 group-hover:scale-110 transition-transform">
                     <Icon className="size-6" />
                   </div>
                   <h3 className="text-lg font-semibold">{title}</h3>

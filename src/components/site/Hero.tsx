@@ -1,97 +1,96 @@
-import { ArrowRight, Sparkles, Activity, Brain, Heart } from "lucide-react";
+import { ArrowRight, Activity, Brain, HeartPulse, ShieldCheck, Stethoscope } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-32 sm:pt-36 md:pt-44 pb-20 md:pb-28 px-5 sm:px-6">
-      {/* animated gradient blobs */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute top-[-10%] left-[10%] size-[420px] rounded-full bg-primary/30 blur-3xl animate-blob" />
-        <div className="absolute top-[20%] right-[5%] size-[360px] rounded-full bg-accent/30 blur-3xl animate-blob [animation-delay:-6s]" />
-        <div className="absolute bottom-[-15%] left-[30%] size-[480px] rounded-full bg-[oklch(0.5_0.2_270/0.35)] blur-3xl animate-blob [animation-delay:-12s]" />
-      </div>
+    <section className="relative overflow-hidden px-5 pt-28 pb-16 sm:px-6 sm:pt-32 md:pt-40 md:pb-24">
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(135deg,oklch(0.99_0.01_210)_0%,oklch(0.94_0.03_185)_46%,oklch(0.96_0.03_145)_100%)]" />
+      <div className="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-t from-background to-transparent" />
 
-      {/* grid overlay */}
-      <div
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.07]"
-        style={{
-          backgroundImage:
-            "linear-gradient(oklch(0.9 0.1 200) 1px, transparent 1px), linear-gradient(90deg, oklch(0.9 0.1 200) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-          maskImage: "radial-gradient(ellipse at center, black 40%, transparent 75%)",
-        }}
-      />
+      <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1.02fr_0.98fr]">
+        <div className="max-w-3xl">
+          <span className="inline-flex animate-fade-in items-center gap-2 rounded-full border border-primary/20 bg-white/80 px-4 py-1.5 text-xs font-semibold text-primary shadow-sm backdrop-blur">
+            <ShieldCheck className="size-3.5" /> Clinician-guided AI monitoring
+          </span>
 
-      <div className="max-w-5xl mx-auto text-center relative">
-        <span className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs text-cyan animate-fade-in">
-          <Sparkles className="size-3.5" /> Next-gen AI for Healthcare
-        </span>
+          <h1 className="mt-6 animate-fade-up text-[2.75rem] font-bold leading-[1.03] text-foreground sm:text-6xl md:text-7xl">
+            Predict risks earlier with a calmer, smarter care platform.
+          </h1>
 
-        <h1 className="mt-6 text-[2.5rem] leading-[1.05] sm:text-6xl md:text-7xl font-bold animate-fade-up">
-          <span className="block">Smarter health.</span>
-          <span className="block text-gradient">Powered by AI.</span>
-        </h1>
-
-        <p
-          className="mt-5 sm:mt-6 max-w-xl sm:max-w-2xl mx-auto text-base sm:text-lg text-muted-foreground animate-fade-up px-2"
-          style={{ animationDelay: "0.15s" }}
-        >
-          NeuroCare AI continuously analyzes your vitals, predicts health risks, and connects you to clinicians — all in real time.
-        </p>
-
-        <div
-          className="mt-9 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 animate-fade-up"
-          style={{ animationDelay: "0.3s" }}
-        >
-          <a
-            href="#pricing"
-            className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-medium text-primary-foreground glow transition-transform hover:scale-105"
-            style={{
-              backgroundImage:
-                "linear-gradient(120deg, oklch(0.78 0.15 200), oklch(0.7 0.18 230), oklch(0.85 0.14 195))",
-              backgroundSize: "200% 200%",
-              animation: "gradient 6s ease infinite",
-            }}
+          <p
+            className="mt-5 max-w-2xl animate-fade-up text-base leading-8 text-muted-foreground sm:mt-6 sm:text-lg"
+            style={{ animationDelay: "0.15s" }}
           >
-            Start Free Trial
-            <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-          </a>
-          <a
-            href="#dashboard"
-            className="w-full sm:w-auto rounded-full px-6 py-3 border border-border hover:border-primary text-foreground font-medium transition-colors text-center"
-          >
-            See Demo
-          </a>
-        </div>
+            NeuroCare AI continuously analyzes vitals, detects clinical drift, and routes timely alerts to the right care team without overwhelming patients.
+          </p>
 
-        {/* floating orbiting icons (hidden on small) */}
-        <div className="pointer-events-none absolute inset-0 hidden lg:block">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-2">
-            {[Activity, Heart, Brain].map((Icon, i) => (
-              <span
-                key={i}
-                className="absolute size-12 grid place-items-center rounded-2xl glass text-cyan animate-orbit"
-                style={{ animationDelay: `${-i * 4.6}s`, animationDuration: "18s" }}
-              >
-                <Icon className="size-5" />
-              </span>
+          <div
+            className="mt-9 flex animate-fade-up flex-col gap-3 sm:mt-10 sm:flex-row"
+            style={{ animationDelay: "0.3s" }}
+          >
+            <a
+              href="#pricing"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:-translate-y-0.5 hover:bg-primary/90 sm:w-auto"
+            >
+              Start Free Trial
+              <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+            </a>
+            <a
+              href="#dashboard"
+              className="inline-flex w-full items-center justify-center rounded-full border border-border bg-white/75 px-6 py-3 font-semibold text-foreground shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary hover:bg-white sm:w-auto"
+            >
+              See Demo
+            </a>
+          </div>
+
+          <div
+            className="mt-12 grid max-w-2xl animate-fade-up grid-cols-3 gap-3 sm:mt-14 sm:gap-5"
+            style={{ animationDelay: "0.45s" }}
+          >
+            {[
+              ["99.7%", "Accuracy"],
+              ["50K+", "Patients"],
+              ["24/7", "Monitoring"],
+            ].map(([n, l]) => (
+              <div key={l} className="rounded-2xl border border-border bg-white/75 p-4 shadow-sm backdrop-blur">
+                <div className="font-display text-2xl font-bold text-primary sm:text-3xl md:text-4xl">{n}</div>
+                <div className="mt-1 text-[0.7rem] text-muted-foreground sm:text-xs">{l}</div>
+              </div>
             ))}
           </div>
         </div>
 
-        <div
-          className="mt-14 sm:mt-16 grid grid-cols-3 gap-4 sm:gap-8 max-w-2xl mx-auto animate-fade-up"
-          style={{ animationDelay: "0.45s" }}
-        >
-          {[
-            ["99.7%", "Accuracy"],
-            ["50K+", "Patients"],
-            ["24/7", "Monitoring"],
-          ].map(([n, l]) => (
-            <div key={l}>
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient">{n}</div>
-              <div className="text-[0.7rem] sm:text-xs text-muted-foreground mt-1">{l}</div>
+        <div className="relative animate-fade-up" style={{ animationDelay: "0.2s" }}>
+          <div className="overflow-hidden rounded-[2rem] border border-white/70 bg-white shadow-2xl shadow-primary/10">
+            <img
+              src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=85"
+              alt="Clinician reviewing a digital patient health dashboard"
+              className="h-[280px] w-full object-cover sm:h-[420px] lg:h-[560px]"
+            />
+            <div className="absolute inset-x-4 bottom-4 rounded-2xl border border-white/70 bg-white/90 p-4 shadow-xl backdrop-blur md:inset-x-6 md:bottom-6 md:p-5">
+              <div className="flex items-center justify-between gap-4">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-widest text-primary">Live risk scan</p>
+                  <h2 className="mt-1 font-display text-xl font-bold">No acute anomaly detected</h2>
+                </div>
+                <span className="grid size-11 place-items-center rounded-full bg-emerald-100 text-emerald-700">
+                  <HeartPulse className="size-5" />
+                </span>
+              </div>
+              <div className="mt-4 grid grid-cols-3 gap-2 text-xs">
+                {[
+                  { icon: Activity, label: "HRV", value: "64 ms" },
+                  { icon: Brain, label: "Stress", value: "Low" },
+                  { icon: Stethoscope, label: "Care", value: "Ready" },
+                ].map(({ icon: Icon, label, value }) => (
+                  <div key={label} className="rounded-xl bg-secondary p-3">
+                    <Icon className="mb-2 size-4 text-primary" />
+                    <div className="text-muted-foreground">{label}</div>
+                    <div className="font-semibold">{value}</div>
+                  </div>
+                ))}
+              </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

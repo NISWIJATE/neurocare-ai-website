@@ -16,7 +16,7 @@ export function Dashboard() {
       <div className="max-w-6xl mx-auto">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto">
-            <span className="text-cyan text-xs sm:text-sm font-medium uppercase tracking-widest">Dashboard</span>
+            <span className="text-cyan text-xs sm:text-sm font-semibold uppercase tracking-widest">Dashboard</span>
             <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold">
               Your health, <span className="text-gradient">at a glance</span>
             </h2>
@@ -26,8 +26,7 @@ export function Dashboard() {
 
         <Reveal delay={150}>
           <div className="mt-10 sm:mt-12 relative">
-            <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-accent/30 blur-3xl rounded-3xl opacity-60" />
-            <div className="relative glass rounded-3xl p-5 sm:p-6 md:p-8">
+            <div className="relative rounded-lg border border-white bg-white p-5 shadow-2xl shadow-primary/10 sm:p-6 md:p-8">
               <div className="flex items-center justify-between mb-6">
                 <div>
                   <div className="text-xs text-muted-foreground">Welcome back</div>
@@ -45,7 +44,7 @@ export function Dashboard() {
                   { icon: Activity, label: "HRV", value: "64", unit: "ms" },
                   { icon: Moon, label: "Sleep", value: "7.4", unit: "h" },
                 ].map(({ icon: Icon, label, value, unit }) => (
-                  <div key={label} className="rounded-xl bg-card/60 border border-border p-4">
+                  <div key={label} className="rounded-lg bg-secondary/80 border border-border p-4 transition-all hover:-translate-y-0.5 hover:bg-white hover:shadow-md">
                     <div className="flex items-center justify-between text-xs text-muted-foreground">
                       <span className="flex items-center gap-1.5"><Icon className="size-3.5 text-cyan" /> {label}</span>
                       <TrendingUp className="size-3.5 text-emerald-400" />
@@ -60,7 +59,7 @@ export function Dashboard() {
               </div>
 
               <div className="mt-5 sm:mt-6 grid lg:grid-cols-3 gap-4">
-                <div className="lg:col-span-2 rounded-xl bg-card/60 border border-border p-5">
+                <div className="lg:col-span-2 rounded-lg bg-secondary/80 border border-border p-5">
                   <div className="flex items-center justify-between mb-4">
                     <h4 className="font-semibold">Cardiac Rhythm — 24h</h4>
                     <span className="text-xs text-muted-foreground">Normal sinus</span>
@@ -76,10 +75,10 @@ export function Dashboard() {
                     <path d="M0 60 Q40 40 80 55 T160 50 T240 45 T320 55 T400 50" fill="none" stroke="oklch(0.85 0.14 195)" strokeWidth="2" />
                   </svg>
                 </div>
-                <div className="rounded-xl bg-gradient-to-br from-primary/20 to-accent/10 border border-primary/30 p-5">
+                <div className="rounded-lg bg-gradient-to-br from-secondary to-white border border-primary/20 p-5">
                   <div className="text-xs text-cyan uppercase tracking-wider">AI Insight</div>
                   <p className="mt-2 text-sm">Your recovery is <span className="font-semibold">12% above</span> baseline. Consider a moderate workout today.</p>
-                  <div className="mt-4 h-2 rounded-full bg-card overflow-hidden">
+                  <div className="mt-4 h-2 rounded-full bg-white overflow-hidden">
                     <div className="h-full w-3/4 rounded-full bg-gradient-to-r from-primary to-accent" />
                   </div>
                   <div className="mt-1 text-xs text-muted-foreground">Wellness score: 84/100</div>

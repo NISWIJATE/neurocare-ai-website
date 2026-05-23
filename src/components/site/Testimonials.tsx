@@ -13,7 +13,7 @@ export function Testimonials() {
       <div className="max-w-6xl mx-auto">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto">
-            <span className="text-cyan text-xs sm:text-sm font-medium uppercase tracking-widest">Testimonials</span>
+            <span className="text-cyan text-xs sm:text-sm font-semibold uppercase tracking-widest">Testimonials</span>
             <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold">
               Trusted by <span className="text-gradient">clinicians & patients</span>
             </h2>
@@ -22,11 +22,13 @@ export function Testimonials() {
         <div className="mt-12 sm:mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {items.map((t, i) => (
             <Reveal key={t.name} delay={i * 100}>
-              <figure className="glass rounded-2xl p-6 hover:-translate-y-1 transition-transform h-full">
+              <figure className="h-full rounded-lg border border-border bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10">
                 <Quote className="size-7 text-cyan/60" />
                 <blockquote className="mt-4 text-foreground/90 leading-relaxed">"{t.text}"</blockquote>
                 <figcaption className="mt-6 flex items-center gap-3">
-                  <div className="size-10 rounded-full bg-gradient-to-br from-primary to-accent" />
+                  <div className="grid size-10 place-items-center rounded-full bg-secondary text-sm font-bold text-primary">
+                    {t.name.split(" ").map((part) => part[0]).join("")}
+                  </div>
                   <div>
                     <div className="font-semibold text-sm">{t.name}</div>
                     <div className="text-xs text-muted-foreground">{t.role}</div>

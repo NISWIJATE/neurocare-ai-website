@@ -9,7 +9,7 @@ export function Contact() {
     <section id="contact" className="section-pad">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 md:gap-12">
         <Reveal>
-          <span className="text-cyan text-xs sm:text-sm font-medium uppercase tracking-widest">Contact</span>
+          <span className="text-cyan text-xs sm:text-sm font-semibold uppercase tracking-widest">Contact</span>
           <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold">
             Let's build a <span className="text-gradient">healthier future</span>
           </h2>
@@ -21,7 +21,7 @@ export function Contact() {
               { icon: MapPin, text: "San Francisco, California" },
             ].map(({ icon: Icon, text }) => (
               <li key={text} className="flex items-center gap-3">
-                <span className="grid place-items-center size-10 rounded-lg bg-primary/15 text-cyan">
+                <span className="grid place-items-center size-10 rounded-lg bg-secondary text-cyan">
                   <Icon className="size-4" />
                 </span>
                 {text}
@@ -32,7 +32,7 @@ export function Contact() {
 
         <Reveal delay={150}>
           <form
-            className="glass rounded-2xl p-6 md:p-8 space-y-4"
+            className="rounded-lg border border-border bg-white p-6 shadow-xl shadow-primary/10 md:p-8 space-y-4"
             onSubmit={(e) => { e.preventDefault(); setSent(true); }}
           >
             <div className="grid sm:grid-cols-2 gap-4">
@@ -44,14 +44,14 @@ export function Contact() {
               <label htmlFor="message" className="text-sm font-medium">Message</label>
               <textarea
                 id="message" required rows={4}
-                className="mt-1.5 w-full rounded-lg bg-input/40 border border-border px-4 py-2.5 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 transition"
+                className="mt-1.5 w-full rounded-lg bg-input/60 border border-border px-4 py-2.5 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 transition"
               />
             </div>
             <button
               type="submit"
-              className="w-full inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground font-medium hover:scale-[1.02] transition-transform"
+              className="w-full inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 bg-primary text-primary-foreground font-semibold transition-all hover:-translate-y-0.5 hover:bg-primary/90"
             >
-              {sent ? "Message sent ✓" : <>Send message <Send className="size-4" /></>}
+              {sent ? "Message sent" : <>Send message <Send className="size-4" /></>}
             </button>
           </form>
         </Reveal>
@@ -66,7 +66,7 @@ function Field({ label, id, type = "text", required = false }: { label: string; 
       <label htmlFor={id} className="text-sm font-medium">{label}</label>
       <input
         id={id} type={type} required={required}
-        className="mt-1.5 w-full rounded-lg bg-input/40 border border-border px-4 py-2.5 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 transition"
+        className="mt-1.5 w-full rounded-lg bg-input/60 border border-border px-4 py-2.5 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 transition"
       />
     </div>
   );
